@@ -39,6 +39,12 @@ h1 {
   font-family: 'ONE-Mobile-POP', Arial, sans-serif;
 }
 
+p {
+  font-size: 1.1rem;
+  line-height: 0.5;
+  font-family: 'SBAggroB', Arial, sans-serif;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
