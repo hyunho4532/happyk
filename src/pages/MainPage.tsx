@@ -1,8 +1,12 @@
 import { Button, Buttons } from "../components/button";
 import { H1 } from "../shared/ui-kit/h1";
 import { P } from "../shared/ui-kit/p";
+import { user } from "../store";
 
 export function MainPage() {
+
+    const { type } = user();
+
     return (
         <>
             <H1>사랑하는 사람에게 생일 카드를 작성해보세요! 🎈</H1>
@@ -13,6 +17,8 @@ export function MainPage() {
                 <Button>엄마 👸</Button>
                 <Button>누나 & 형 🧑👧</Button>
             </Buttons>
+
+            <P>{type}에게 작성하세요!</P>
         </>
     )
 } 

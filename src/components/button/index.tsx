@@ -1,5 +1,6 @@
 import { css } from "@emotion/css";
 import React from "react";
+import { user } from "../../store";
 
 
 export function Buttons({children}: { children: React.ReactNode }) {   
@@ -9,6 +10,15 @@ export function Buttons({children}: { children: React.ReactNode }) {
 }
 
 export function Button({children}: { children: React.ReactNode }) {
+
+    const { setType } = user();
+
+    const familyOnChange = (children: React.ReactNode) => {
+        if (children != null) {
+            setType(children);
+        }
+    }
+
     return (
         <button className={css`
             width: 180px;
@@ -19,6 +29,7 @@ export function Button({children}: { children: React.ReactNode }) {
             &:hover {
                 transform: scale(1.10)
             }
-        `}>{children}</button>
+        `}
+        onClick={() => familyOnChange(children)}>{children}</button>
     )
 }
