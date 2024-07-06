@@ -6,13 +6,14 @@ import { IMG } from "../../shared/ui-kit/img";
 export function Cards({children}: { children: React.ReactNode }) {
     return (
         <div className={css`
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         `}>{children}</div>
     )
 }
 
 export function ThemeCard({children}: { children: React.ReactNode }) {
-
     return (
         <Card className={css`
             width: 180px;

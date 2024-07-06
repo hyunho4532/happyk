@@ -1,10 +1,15 @@
 import Dialog from '@mui/material/Dialog';
-import { dialog } from '../../store';
+import { dialog, theme } from '../../store';
 import { css } from '@emotion/react';
 
-export function ThemeDialog({children}: any) {
+export function ThemeDialog() {
 
-    const { popup } = dialog();
+    const { popup, setPopup } = dialog();
+    const { path } = theme();
+
+    const themePopupDialogClose = () => {
+        setPopup(false);
+    }
 
     return (
         <Dialog
@@ -12,9 +17,10 @@ export function ThemeDialog({children}: any) {
                 width: 480px;
                 height: 650px;
             `}
-            open={popup}>
+            open={popup}
+            onClose={() => themePopupDialogClose()}>
 
-            <img src={children}></img>
+            <img src={path}></img>
 
         </Dialog>
     )
