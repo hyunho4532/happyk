@@ -9,7 +9,19 @@ export function Buttons({children}: { children: React.ReactNode }) {
     )
 }
 
-export function Button({children}: { children: React.ReactNode }) {
+export function Button({
+    width, 
+    height, 
+    margin,
+    hover = 'yes',
+    children
+}: { 
+    width: string, 
+    height: string,
+    margin?: string,
+    hover?: string,
+    children: React.ReactNode 
+}) {
 
     const { setType } = user();
 
@@ -21,13 +33,16 @@ export function Button({children}: { children: React.ReactNode }) {
 
     return (
         <button className={css`
-            width: 180px;
-            height: 120px;
+            width: ${width};
+            height: ${height};
             margin-left: 8px;
+            margin: ${margin != null ? '0 auto': ''};
+            margin-top: ${margin != null ? `${margin}` : ''};
+            margin-bottom: ${margin != null ? `${margin}` : ''};
             transition: transform 0.7s;
 
             &:hover {
-                transform: scale(1.10)
+                ${hover == 'yes' ? 'transform: scale(1.10)' : ''}
             }
         `}
         onClick={() => familyOnChange(children)}>{children}</button>

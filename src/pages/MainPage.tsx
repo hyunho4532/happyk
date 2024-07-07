@@ -16,9 +16,9 @@ export function MainPage() {
                 1 Way. 누구에게 생일 카드를 작성하실건가요? To. {type} ❤
             </P>
             <Buttons>
-                <Button>아빠 🧔</Button>
-                <Button>엄마 👸</Button>
-                <Button>누나 & 형 🧑👧</Button>
+                <Button width="180px" height="120px">아빠 🧔</Button>
+                <Button width="180px" height="120px">엄마 👸</Button>
+                <Button width="180px" height="120px">누나 & 형 🧑👧</Button>
             </Buttons>
 
             <P fontSize="18px" paddingTop="80px">

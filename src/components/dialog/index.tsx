@@ -1,6 +1,7 @@
 import Dialog from '@mui/material/Dialog';
 import { dialog, theme } from '../../store';
 import { css } from '@emotion/react';
+import { Button } from '../button';
 
 export function ThemeDialog() {
 
@@ -20,7 +21,15 @@ export function ThemeDialog() {
             open={popup}
             onClose={() => themePopupDialogClose()}>
 
-            <img src={path}></img>
+            <img src={path} />
+
+            <Button
+                width="280px"
+                height="70px"
+                margin="40px"
+                hover="not">
+                테마 등록 완료!
+            </Button>
 
         </Dialog>
     )

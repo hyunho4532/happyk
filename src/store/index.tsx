@@ -5,7 +5,9 @@ import { Theme } from "../entites/theme";
 
 export const user = create<User>((set) => ({
     type: '',
+    path: '',
     setType: (prevState) => set({ type: prevState?.toString() }),
+    setPath: (prevState) => set({ path: prevState?.toString() }),
 }));
 
 export const dialog = create<Dialog>((set) => ({
