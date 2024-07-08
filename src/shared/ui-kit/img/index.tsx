@@ -1,9 +1,19 @@
-import { css } from "@emotion/react";
 import { dialog, theme } from "../../../store";
 import { ThemeDialog } from "../../../components/dialog";
 import React from "react";
+import { css } from "@emotion/react";
 
-export function IMG({children}: any) {
+export function IMG({
+    width,
+    height,
+    children,
+    margin,
+}: {    
+    width: string,
+    height: string
+    margin?: string,
+    children: any, 
+}) {
 
     const { popup, setPopup } = dialog();
     const { setPath } = theme();
@@ -13,15 +23,21 @@ export function IMG({children}: any) {
         setPath(path);
     }
 
+    const imgStyle = css`
+        width: ${width};
+        height: ${height};
+        margin-top: ${margin};
+    `;
+
     return (
         <React.Fragment>
-            <img
-                className={css`
-                    height: auto;
-                `}
-                onClick={() => themePopupDialogShow(children?.toString())}
-                src={children?.toString()}>
-            </img>
+            <div
+                className={imgStyle}>
+                <img
+                    onClick={() => themePopupDialogShow(children?.toString())}
+                    src={children?.toString()}>
+                </img>
+            </div>
 
             { popup && <ThemeDialog />}
         </React.Fragment>
