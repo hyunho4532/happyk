@@ -27,7 +27,9 @@ export function ThemeDialog() {
                 width="280px"
                 height="70px"
                 margin="40px"
-                hover="not">
+                hover="not"
+                type="테마 등록"
+                path={path}>
                 테마 등록 완료!
             </Button>
 
