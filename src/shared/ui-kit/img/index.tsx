@@ -1,17 +1,10 @@
 import { dialog, theme } from "../../../store";
 import { ThemeDialog } from "../../../components/dialog";
 import React from "react";
-import { css } from "@emotion/react";
 
 export function IMG({
-    width,
-    height,
-    children,
-    margin,
-}: {    
-    width: string,
-    height: string
-    margin?: string,
+    children
+}: {
     children: any, 
 }) {
 
@@ -23,16 +16,9 @@ export function IMG({
         setPath(path);
     }
 
-    const imgStyle = css`
-        width: ${width};
-        height: ${height};
-        margin-top: ${margin};
-    `;
-
     return (
         <React.Fragment>
-            <div
-                className={imgStyle}>
+            <div>
                 <img
                     onClick={() => themePopupDialogShow(children?.toString())}
                     src={children?.toString()}>

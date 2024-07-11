@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
+import { user } from "../../../store"
 
 export function Input({
     width,
@@ -12,6 +13,13 @@ export function Input({
     type: string,
     children: any
 }) {
+
+    const { setName } = user();
+
+    const inputChange = (e: any) => {
+        setName(e.target.value);
+    }
+
     return (
         <input
             type={type}
@@ -21,6 +29,7 @@ export function Input({
                 padding-left: 8px;
             `}
             placeholder={children}
+            onChange={inputChange}
         />
     )
 }

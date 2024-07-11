@@ -33,7 +33,7 @@ export function Button({
     children: React.ReactNode 
 }) {
 
-    const { setPath, setType } = user();
+    const { name, setPath, setType } = user();
     const navigate = useNavigate();
 
     const familyOnChange = (children: React.ReactNode) => {
@@ -51,6 +51,10 @@ export function Button({
             else if (type === "등록 완료") {
                 toastSuccess("이제 본격적으로 생일 카드를 작성해보세요!! 🤗");
                 return navigate("/birth_card/insert");
+            }
+
+            else if (type === "최종 등록 완료") {
+                console.log(name);
             }
         }
     }
