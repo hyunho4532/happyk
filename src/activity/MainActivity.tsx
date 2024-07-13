@@ -5,7 +5,7 @@ import { H1 } from "../shared/ui-kit/h1";
 import { P } from "../shared/ui-kit/p";
 import { user } from "../store";
 
-export function MainPage() {
+export function MainActivity() {
 
     const { type } = user();
 
@@ -16,9 +16,9 @@ export function MainPage() {
                 1 Way. 누구에게 생일 카드를 작성하실건가요? To. {type} ❤
             </P>
             <Buttons>
-                <Button>아빠 🧔</Button>
-                <Button>엄마 👸</Button>
-                <Button>누나 & 형 🧑👧</Button>
+                <Button width="180px" height="120px" type="생일 카드 작성 등록">아빠 🧔</Button>
+                <Button width="180px" height="120px" type="생일 카드 작성 등록">엄마 👸</Button>
+                <Button width="180px" height="120px" type="생일 카드 작성 등록">누나 & 형 🧑👧</Button>
             </Buttons>
 
             <P fontSize="18px" paddingTop="80px">
@@ -35,6 +35,17 @@ export function MainPage() {
                     </ThemeCard>
                 ))}
             </Cards>
+
+            <Button 
+                width="460px"
+                height="60px"
+                margin="40px"
+                hover="not"
+                flex="flex"
+                type="등록 완료"
+                color="cornflowerblue">
+                등록 완료!
+            </Button>
         </>
     )
 } 
