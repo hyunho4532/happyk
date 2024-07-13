@@ -4,6 +4,7 @@ import { css } from "@emotion/css";
 import { H1 } from "../../shared/ui-kit/h1";
 import { P } from "../../shared/ui-kit/p";
 import { IMG, IMGS } from "../../shared/ui-kit/img";
+import Viewer from "@toast-ui/editor/dist/toastui-editor-viewer";
 
 export function SelectActivity() {
 
@@ -20,7 +21,7 @@ export function SelectActivity() {
                     height: 620px;
                 `}>
 
-                <P fontSize="18ps" paddingTop="20px" paddingLeft="16px">
+                <P fontSize="18px" paddingTop="20px" paddingLeft="16px">
                     생일을 진심을 축하합니다! {name}님 ✨🎉🎊
                 </P>
 
@@ -29,6 +30,14 @@ export function SelectActivity() {
                         {`../../../public/${path}`}
                     </IMG>
                 </IMGS>
+
+                <P fontSize="18px" paddingTop="20px" paddingLeft="16px">
+                    생일을 축하해주는 사람이 메시지를 작성했어요!!
+                </P>
+
+                <Viewer>
+                    
+                </Viewer>
             </Card>
         </>
     )
