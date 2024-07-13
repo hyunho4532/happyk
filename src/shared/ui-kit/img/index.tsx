@@ -1,6 +1,22 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { dialog, theme } from "../../../store";
 import { ThemeDialog } from "../../../components/dialog";
-import React from "react";
+
+export function IMGS({
+    children
+}: {
+    children: any
+}) {
+    return (
+        <div
+            css={css`
+                margin-left: 16px;
+            `}>
+            {children}
+        </div>
+    )
+}
 
 export function IMG({
     children
@@ -17,15 +33,14 @@ export function IMG({
     }
 
     return (
-        <React.Fragment>
-            <div>
-                <img
-                    onClick={() => themePopupDialogShow(children?.toString())}
-                    src={children?.toString()}>
-                </img>
-            </div>
+        <div>
+            <img
+                onClick={() => themePopupDialogShow(children?.toString())}
+                src={children?.toString()}>
+            </img>
 
+            
             { popup && <ThemeDialog />}
-        </React.Fragment>
+        </div>
     )
 }

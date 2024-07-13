@@ -1,5 +1,6 @@
 export type props = {
     children: any
     fontSize: string,
-    paddingTop: string
+    paddingTop: string,
+    paddingLeft?: string
 }

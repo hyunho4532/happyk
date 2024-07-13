@@ -6,18 +6,25 @@ export function Input({
     width,
     height,
     type,
+    isType,
     children
 }: {
     width: string,
     height: string,
     type: string,
+    isType: string
     children: any
 }) {
 
-    const { setName } = user();
+    const { setName, setDate } = user();
 
     const inputChange = (e: any) => {
-        setName(e.target.value);
+        if (isType === "name") {
+            setName(e.target.value);
+        }
+        else if (isType === "date") {
+            setDate(e.target.value);
+        }
     }
 
     return (

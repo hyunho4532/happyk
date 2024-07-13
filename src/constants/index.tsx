@@ -7,6 +7,10 @@ export const ThemeList = [
     "birthday_card6.jpg"
 ]
 
+export const toolbarItems = [
+    ['heading', 'bold', 'italic', 'strike']
+];
+
 export const birthdayInitialMessage = `
 ### 000에게
 

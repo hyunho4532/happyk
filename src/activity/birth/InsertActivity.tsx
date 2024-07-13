@@ -6,7 +6,7 @@ import { css } from "@emotion/react";
 import { Editors } from "../../shared/ui-kit/editor";
 import { Button } from "../../components/button";
 
-export function BirthCardPage() {
+export function InsertActivity() {
 
     const { path } = user();
 
@@ -25,7 +25,7 @@ export function BirthCardPage() {
                 생일자의 이름을 입력해주세요!
             </P>
 
-            <Input width="390px" height="40px" type="text">
+            <Input width="390px" height="40px" isType="name" type="text">
                 이름 입력해주세요! ex: 홍길동
             </Input>
 
@@ -35,7 +35,7 @@ export function BirthCardPage() {
                 생일 날짜를 선택해주세요!
             </P>
 
-            <Input width="390px" height="40px" type="date   ">
+            <Input width="390px" height="40px" isType="date" type="date">
                 이름 입력해주세요! ex: 홍길동
             </Input>
 

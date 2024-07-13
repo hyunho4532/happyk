@@ -5,7 +5,7 @@ import { H1 } from "../shared/ui-kit/h1";
 import { P } from "../shared/ui-kit/p";
 import { user } from "../store";
 
-export function MainPage() {
+export function MainActivity() {
 
     const { type } = user();
 

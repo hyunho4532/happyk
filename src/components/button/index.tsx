@@ -33,7 +33,7 @@ export function Button({
     children: React.ReactNode 
 }) {
 
-    const { name, setPath, setType } = user();
+    const { message, setPath, setType } = user();
     const navigate = useNavigate();
 
     const familyOnChange = (children: React.ReactNode) => {
@@ -54,7 +54,8 @@ export function Button({
             }
 
             else if (type === "최종 등록 완료") {
-                console.log(name);
+                console.log(message);
+                return navigate("/birth_card/select");
             }
         }
     }
