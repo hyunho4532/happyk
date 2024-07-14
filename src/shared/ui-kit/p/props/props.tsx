@@ -3,4 +3,5 @@ export type props = {
     fontSize: string,
     paddingTop: string,
     paddingLeft?: string
+    visibie?: string
 }
