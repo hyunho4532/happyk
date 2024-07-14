@@ -3,8 +3,11 @@ import { user } from "../../store"
 import { P } from "../../shared/ui-kit/p";
 import { Input } from "../../shared/ui-kit/input";
 import { css } from "@emotion/react";
-import { Editors } from "../../shared/ui-kit/editor";
+import { BirthCardEditor, BirthCardEditors } from "../../shared/ui-kit/editor";
 import { Button } from "../../components/button";
+import { birthdayMessages } from "../../constants";
+import { BirthMessageItem, BirthMessageItems } from "../../components/items";
+import { Spacer } from "../../shared/ui-kit/spacer";
 
 export function InsertActivity() {
 
@@ -45,12 +48,19 @@ export function InsertActivity() {
                 생일 축하 메시지를 남겨보세요!
             </P>
 
-            <Editors />
+            <BirthMessageItems>
+                <BirthMessageItem messages={birthdayMessages}></BirthMessageItem>
+            </BirthMessageItems>
+
+            <Spacer />
+
+            <BirthCardEditors>
+                <BirthCardEditor />
+            </BirthCardEditors>
 
             <Button width="420px" height="50px" type="최종 등록 완료" margin="50px">
                 진심으로 축하드리며.... 🎉🎉
             </Button>
-            
         </div>
     )
 }
