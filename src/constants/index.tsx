@@ -11,9 +11,16 @@ export const toolbarItems = [
     ['heading', 'bold', 'italic', 'strike']
 ];
 
-export const birthdayInitialMessage = `
-### 000에게
+export const birthdayMessages = [
+    {
+        key: 1,
+        message: "### 000에게"
+    }
+];
 
-#### 000아!! 태어나줘서 고마워!!!
-###### 이 세상 누구보다 더 행복할거야 오늘은 너의 날이다 생일 축하해
+export const birthdayInitialMessage = `
+    ### 000에게
+
+    #### 000아!! 태어나줘서 고마워!!!
+    ###### 이 세상 누구보다 더 행복할거야 오늘은 너의 날이다 생일 축하해
 `

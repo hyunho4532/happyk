@@ -5,6 +5,8 @@ import { Input } from "../../shared/ui-kit/input";
 import { css } from "@emotion/react";
 import { Editors } from "../../shared/ui-kit/editor";
 import { Button } from "../../components/button";
+import { birthdayMessages } from "../../constants";
+import { BirthMessageItems } from "../../components/items/BirthMessageItems";
 
 export function InsertActivity() {
 
@@ -44,6 +46,8 @@ export function InsertActivity() {
                 paddingTop="80px">
                 생일 축하 메시지를 남겨보세요!
             </P>
+
+            <BirthMessageItems messages={birthdayMessages} />
 
             <Editors />
 
