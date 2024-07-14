@@ -61,7 +61,6 @@ export function InsertActivity() {
             <Button width="420px" height="50px" type="최종 등록 완료" margin="50px">
                 진심으로 축하드리며.... 🎉🎉
             </Button>
-            
         </div>
     )
 }

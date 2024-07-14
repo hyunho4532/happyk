@@ -1,8 +1,8 @@
 import { Editor } from '@toast-ui/react-editor';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { birthdayInitialMessage, toolbarItems } from '../../../constants';
-import { user } from '../../../store';
-import React, { useRef } from 'react';
+import { messages, user } from '../../../store';
+import React, { useEffect, useRef } from 'react';
 import { css } from '@emotion/react';
 
 export const BirthCardEditors = ({children}: {children: React.ReactNode}) => {
@@ -19,6 +19,7 @@ export const BirthCardEditors = ({children}: {children: React.ReactNode}) => {
 export const BirthCardEditor = () => {
 
     const { setMessage } = user();
+    const { title } = messages();
     const editorRef = useRef<Editor>(null);
 
     const messageChange = () => {
@@ -30,10 +31,17 @@ export const BirthCardEditor = () => {
         }
     }
 
+    useEffect(() => {
+        if (editorRef.current) {
+            const editorInstance = editorRef.current?.getInstance();
+            editorInstance.setMarkdown(title);
+        }
+    }, [title]);
+
     return (
         <Editor
             ref={editorRef}
-            initialValue={birthdayInitialMessage}
+            onLoad={title}
             toolbarItems={toolbarItems}
             onChange={messageChange}>
 

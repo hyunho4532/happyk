@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { User } from "../entites/user";
 import { Dialog } from "../entites/dialog";
 import { Theme } from "../entites/theme";
+import { Message } from "../entites/message";
 
 export const user = create<User>((set) => ({
     type: '',
@@ -25,3 +26,8 @@ export const theme = create<Theme>((set) => ({
     path: '',
     setPath: (prevState) => set({ path: prevState })
 }));
+
+export const messages = create<Message>((set) => ({
+    title: '',
+    setTitle: (prevState) => set({ title: prevState })
+}))
