@@ -14,7 +14,7 @@ export function P({children, fontSize, paddingTop, paddingLeft, visibie, args}: 
         <p className={css`
             padding-top: ${paddingTop != null ? `${paddingTop}` : '' };
             padding-left: ${paddingLeft != null ? `${paddingLeft}` : '' };
-            font-size: ${fontSize}
+            font-size: ${fontSize};
             visibility: ${visibie};
         `}
         onClick={messageClick}>
