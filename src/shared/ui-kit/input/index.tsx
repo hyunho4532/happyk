@@ -5,12 +5,14 @@ import { user } from "../../../store"
 export function Input({
     width,
     height,
+    margin,
     type,
     isType,
     children
 }: {
     width: string,
     height: string,
+    margin?: string,
     type: string,
     isType: string
     children: any
@@ -34,6 +36,8 @@ export function Input({
                 width: ${width};
                 height: ${height};
                 padding-left: 8px;
+                margin-top: ${margin};
+                margin-left: ${margin};
             `}
             placeholder={children}
             onChange={inputChange}

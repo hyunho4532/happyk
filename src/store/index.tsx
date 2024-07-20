@@ -3,6 +3,7 @@ import { User } from "../entites/user";
 import { Dialog } from "../entites/dialog";
 import { Theme } from "../entites/theme";
 import { Message } from "../entites/message";
+import { Calendar } from "../entites/calendar";
 
 export const user = create<User>((set) => ({
     point: '',
@@ -29,4 +30,12 @@ export const theme = create<Theme>((set) => ({
 export const messages = create<Message>((set) => ({
     title: '',
     setTitle: (prevState) => set({ title: prevState })
+}))
+
+export const calendar = create<Calendar>((set) => ({
+    date: '',
+    name: '',
+    setCalendar: (type, prevState) => {
+        set({ [type]: prevState?.toString() })
+    }
 }))
