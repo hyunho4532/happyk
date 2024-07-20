@@ -5,11 +5,13 @@ import { Theme } from "../entites/theme";
 import { Message } from "../entites/message";
 
 export const user = create<User>((set) => ({
+    point: '',
     type: '',
     path: '',
     name: '',
     date: '',
     message: '',
+    setPoint: (prevState) => set({ point: prevState?.toString() }),
     setType: (prevState) => set({ type: prevState?.toString() }),
     setPath: (prevState) => set({ path: prevState?.toString() }),
     setName: (prevState) => set({ name: prevState?.toString() }),

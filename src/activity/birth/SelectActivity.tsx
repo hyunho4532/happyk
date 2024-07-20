@@ -11,7 +11,7 @@ import { toPng } from "html-to-image";
 
 export function SelectActivity() {
 
-    const { name, path, message, date, type } = user();
+    const { name, path, message, point } = user();
     const cardRef = useRef<HTMLDivElement>(null);
 
     const birthCardDownload = () => {
@@ -62,10 +62,14 @@ export function SelectActivity() {
                         `}>
                         <Viewers value={message} />
                     </div>
+
+                    <P fontSize="18px" paddingTop="32px" paddingLeft="16px">
+                        #{point}
+                    </P>
                 </Card>
             </div>
 
-            <button style={{ "width": "360px", "marginTop": "24px", "justifyContent": "center", "alignItems": "center" }} onClick={birthCardDownload}>
+            <button style={{ "width": "620px", "height": "60px", "marginTop": "24px", "justifyContent": "center", "alignItems": "center" }} onClick={birthCardDownload}>
                 생일 카드 다운로드하기
             </button>
         </>
