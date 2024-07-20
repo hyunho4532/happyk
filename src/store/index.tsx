@@ -34,7 +34,7 @@ export const messages = create<Message>((set) => ({
 
 export const calendar = create<Calendar>((set) => ({
     date: '',
-    name: '',
+    calendarNames: '',
     setCalendar: (type, prevState) => {
         set({ [type]: prevState?.toString() })
     }

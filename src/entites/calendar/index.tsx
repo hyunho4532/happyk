@@ -1,5 +1,5 @@
 export interface Calendar {
     date: string;
-    name: string;
+    calendarNames: string;
     setCalendar: (type: string, prevState: React.ReactNode) => any;
 }

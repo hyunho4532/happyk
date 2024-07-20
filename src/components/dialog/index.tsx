@@ -54,7 +54,7 @@ export function CalendarDialog() {
                 생일 날짜를 등록해주세요! {date}
             </P>
             
-            <Input width="390px" height="260px" isType="name" type="text" margin="16px">
+            <Input width="390px" height="260px" isType="calendarNames" type="text" margin="16px">
                 이름 입력해주세요! ex: 홍길동
             </Input>
 

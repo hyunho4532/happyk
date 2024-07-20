@@ -1,6 +1,6 @@
     import { css } from "@emotion/css";
     import React from "react";
-    import { user } from "../../store";
+    import { calendar, user } from "../../store";
     import { toastSuccess } from "../../shared/ui-kit/toast";
     import { useNavigate } from "react-router-dom";
 
@@ -34,6 +34,7 @@
     }) {
 
         const { setUser } = user();
+        const { date, calendarNames } = calendar();
         const navigate = useNavigate();
 
         const familyOnChange = (children: React.ReactNode) => {
@@ -59,6 +60,37 @@
 
                 else if (type === "생일 날짜 확인하기") {
                     return navigate("/birth_calendar/select");
+                }
+
+                else if (type === "날짜 등록") {
+                    if (date) {
+                        let currentKey = localStorage.getItem("currentKey");
+                        if (currentKey === null) {
+                            currentKey = "0";
+                        }
+                        const newKey = parseInt(currentKey) + 1;
+    
+                        const birthDateData = {
+                            key: newKey,
+                            title: calendarNames,
+                            date: date
+                        };
+    
+                        localStorage.setItem("currentKey", newKey.toString());
+    
+                        let birthDates = localStorage.getItem("birthDates");
+                        if (birthDates === null) {
+                            birthDates = "[]";
+                        }
+    
+                        const birthDatesArray = JSON.parse(birthDates);
+                        birthDatesArray.push(birthDateData);
+                        localStorage.setItem("birthDates", JSON.stringify(birthDatesArray));
+    
+                        toastSuccess("생일 날짜가 등록되었어요!! 🎉");
+                    } else {
+                        toastSuccess("날짜를 선택해주세요.");
+                    }
                 }
             }
         }

@@ -4,9 +4,10 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 import { calendar, dialog } from "../../store";
 import { CalendarDialog } from "../../components/dialog";
+import { useEffect, useState } from "react";
 
 export function CalendarActivity() {
-
+    const [ calendars, setCalendars ] = useState<any[]>([]);
     const { popup, setPopup } = dialog();
     const { setCalendar } = calendar();
 
@@ -15,6 +16,13 @@ export function CalendarActivity() {
         setCalendar("date", arg.dateStr);
     }
 
+    useEffect(() => {
+        const calendar = localStorage.getItem("birthDates");
+        if (calendar) {
+            setCalendars(JSON.parse(calendar));
+        }
+    }, [calendars]);
+
     return (
         <div
             style={{ "width": "1600px" }}>
@@ -22,9 +30,10 @@ export function CalendarActivity() {
             <FullCalendar
                 plugins={[ dayGridPlugin, interactionPlugin ]}
                 initialView="dayGridMonth"
-                events={[
-                    { title: '이현호 생일', date: '2024-07-23' },
-                ]}
+                events={calendars.map((calendar: any) => ({
+                    title: calendar.title + "님의 생일",
+                    date: calendar.date
+                }))}
                 dateClick={handleDateClick} />
 
             {

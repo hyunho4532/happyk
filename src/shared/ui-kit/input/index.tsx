@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
-import { user } from "../../../store"
+import { calendar, user } from "../../../store"
 
 export function Input({
     width,
@@ -19,13 +19,14 @@ export function Input({
 }) {
 
     const { setUser } = user();
+    const { setCalendar } = calendar();
 
     const inputChange = (e: any) => {
-        if (isType === "name") {
+        if (isType === "name" || isType === "date") {
             setUser(isType, e.target.value);
         }
-        else if (isType === "date") {
-            setUser(isType, e.target.value);
+        else if (isType === "calendarNames") {
+            setCalendar(isType, e.target.value);
         }
     }
 
