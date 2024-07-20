@@ -1,30 +1,20 @@
 import express from 'express';
-import cors from 'cors';
-import { createHandler } from 'graphql-http'
 import messageSchema from './schema/user.js';
-import rootValue from './api/index.js';
-import { ruruHTML } from 'ruru/server';
+import { root, getBirthdayMessages } from './api/index.js';
+import { graphqlHTTP } from 'express-graphql';
 
 const app = express();
-const port = 4000;
 
-app.use(cors());
+app.use("/graphql", graphqlHTTP({
+    schema: messageSchema,
+    rootValue: root,
+    graphiql: true
+}));
 
-app.all(
-    "/graphql",
-    createHandler({
-        schema: messageSchema,
-        rootValue: rootValue
-    })
-)
+app.get("/api/birthdayMessages", (req, res) => {
+    res.json(getBirthdayMessages());
+});
 
-app.get("/", (req, res) => {
-    res.type("html");
-    res.end(ruruHTML({
-        endpoint: "/graphql"
-     }))
-})
-
-app.listen(port, () => {
-    console.log(`listening on ${port}`)
+app.listen(4000, () => {
+    console.log(`listening connection`)
 })

@@ -5,7 +5,6 @@ import { Input } from "../../shared/ui-kit/input";
 import { css } from "@emotion/react";
 import { BirthCardEditor, BirthCardEditors } from "../../shared/ui-kit/editor";
 import { Button } from "../../components/button";
-import { birthdayMessages } from "../../constants";
 import { BirthMessageItem, BirthMessageItems } from "../../components/items";
 import { Spacer } from "../../shared/ui-kit/spacer";
 
@@ -49,7 +48,7 @@ export function InsertActivity() {
             </P>
 
             <BirthMessageItems>
-                <BirthMessageItem messages={birthdayMessages}></BirthMessageItem>
+                <BirthMessageItem />
             </BirthMessageItems>
 
             <Spacer />

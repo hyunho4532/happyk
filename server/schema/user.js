@@ -2,7 +2,13 @@ import { buildSchema } from 'graphql';
 
 const messageSchema = buildSchema(`
   type Query {
-    hello: String
+    birthdayMessages: [Message]
+  }
+  
+  type Message {
+    key: Int
+    title: String
+    message: String
   }
 `)
 

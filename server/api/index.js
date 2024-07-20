@@ -1,7 +1,11 @@
-const rootValue = {
-    hello() {
-        return "Hello World!";
-    }
-}
+import birthdayMessages from "../const/index.js";
 
-export default rootValue
+const root = {
+    birthdayMessages: () => birthdayMessages,
+};
+
+const getBirthdayMessages = () => {
+    return birthdayMessages;
+};
+
+export { root, getBirthdayMessages }
