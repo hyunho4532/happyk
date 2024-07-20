@@ -12,24 +12,7 @@ export const user = create<User>((set) => ({
     date: '',
     message: '',
     setUser: (type, prevState) => {
-        if (type === "point") {
-            set({ point: prevState?.toString() })
-        }
-        else if (type === "type") {
-            set({ type: prevState?.toString() })
-        }
-        else if (type === "path") {
-            set({ path: prevState?.toString() })
-        }
-        else if (type === "message") {
-            set({ message: prevState?.toString() })
-        }
-        else if (type === "name") {
-            set({ name: prevState?.toString() })
-        }
-        else if (type === "date") {
-            set({ date: prevState?.toString() })
-        }
+        set({ [type]: prevState?.toString() })
     }
 }));
 

@@ -43,8 +43,6 @@ export const BirthCardEditor = () => {
             ref={editorRef}
             onLoad={title}
             toolbarItems={toolbarItems}
-            onChange={messageChange}>
-
-        </Editor>
+            onChange={messageChange} />
     )
 }
