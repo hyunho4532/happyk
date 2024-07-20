@@ -1,7 +1,9 @@
-import {buildSchema} from 'graphql';
+import { buildSchema } from 'graphql';
 
-export var userSchema = buildSchema(`
-    type Query {
-      hello: String
-    }
-  `)
+const messageSchema = buildSchema(`
+  type Query {
+    hello: String
+  }
+`)
+
+export default messageSchema
