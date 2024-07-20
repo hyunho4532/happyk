@@ -56,14 +56,25 @@ export function MainActivity() {
             </Cards>
 
             <Button 
-                width="460px"
+                width="540px"
                 height="60px"
                 margin="40px"
                 hover="not"
                 flex="flex"
                 type="등록 완료"
                 color="cornflowerblue">
-                등록 완료!
+                등록 완료! ✅
+            </Button>
+
+            <Button 
+                width="540px"
+                height="60px"
+                margin="6px"
+                hover="not"
+                flex="flex"
+                type="생일 날짜 확인하기"
+                color="firebrick">
+                생일 날짜 확인하기 📆
             </Button>
         </>
     )

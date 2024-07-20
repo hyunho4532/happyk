@@ -33,7 +33,7 @@
         children: React.ReactNode 
     }) {
 
-        const { message, setUser } = user();
+        const { setUser } = user();
         const navigate = useNavigate();
 
         const familyOnChange = (children: React.ReactNode) => {
@@ -54,8 +54,11 @@
                 }
 
                 else if (type === "최종 등록 완료") {
-                    console.log(message);
                     return navigate("/birth_card/select");
+                }
+
+                else if (type === "생일 날짜 확인하기") {
+                    return navigate("/birth_calendar/select");
                 }
             }
         }
