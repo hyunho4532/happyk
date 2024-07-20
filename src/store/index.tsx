@@ -11,12 +11,26 @@ export const user = create<User>((set) => ({
     name: '',
     date: '',
     message: '',
-    setPoint: (prevState) => set({ point: prevState?.toString() }),
-    setType: (prevState) => set({ type: prevState?.toString() }),
-    setPath: (prevState) => set({ path: prevState?.toString() }),
-    setName: (prevState) => set({ name: prevState?.toString() }),
-    setDate: (prevState) => set({ date: prevState?.toString() }),
-    setMessage: (prevState) => set({ message: prevState?.toString() })
+    setUser: (type, prevState) => {
+        if (type === "point") {
+            set({ point: prevState?.toString() })
+        }
+        else if (type === "type") {
+            set({ type: prevState?.toString() })
+        }
+        else if (type === "path") {
+            set({ path: prevState?.toString() })
+        }
+        else if (type === "message") {
+            set({ message: prevState?.toString() })
+        }
+        else if (type === "name") {
+            set({ name: prevState?.toString() })
+        }
+        else if (type === "date") {
+            set({ date: prevState?.toString() })
+        }
+    }
 }));
 
 export const dialog = create<Dialog>((set) => ({

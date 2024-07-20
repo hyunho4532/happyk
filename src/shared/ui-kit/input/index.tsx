@@ -16,14 +16,14 @@ export function Input({
     children: any
 }) {
 
-    const { setName, setDate } = user();
+    const { setUser } = user();
 
     const inputChange = (e: any) => {
         if (isType === "name") {
-            setName(e.target.value);
+            setUser(isType, e.target.value);
         }
         else if (isType === "date") {
-            setDate(e.target.value);
+            setUser(isType, e.target.value);
         }
     }
 

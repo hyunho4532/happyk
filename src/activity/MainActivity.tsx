@@ -8,10 +8,10 @@ import { user } from "../store";
 
 export function MainActivity() {
 
-    const { type, setPoint } = user();
+    const { type, setUser } = user();
 
     const attractivePointChange = (e: any) => {
-        setPoint(e.target.value);
+        setUser("point", e.target.value);
     }
 
     return (
@@ -28,7 +28,7 @@ export function MainActivity() {
                     } label={attractive} />
                 ))}
             </FormGroup>
-            
+
             <P fontSize="18px" paddingTop="80px">
                 2 Way. 누구에게 생일 카드를 작성하실건가요? To. {type} ❤
             </P>

@@ -33,18 +33,18 @@
         children: React.ReactNode 
     }) {
 
-        const { message, setPath, setType } = user();
+        const { message, setUser } = user();
         const navigate = useNavigate();
 
         const familyOnChange = (children: React.ReactNode) => {
             if (children != null) {
                 if (type === "생일 카드 작성 등록") {
-                    setType(children);
+                    setUser("type", children);
                     toastSuccess("등록이 완료되었어요!! 🤗");
                 }
 
                 else if (type === "테마 등록") {
-                    setPath(path);
+                    setUser("path", path);
                     toastSuccess("테마 등록이 완료되었어요!! 🤗");
                 }
 
