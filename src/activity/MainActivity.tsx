@@ -1,22 +1,43 @@
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import { Button, Buttons } from "../components/button";
-import { Cards, ThemeCard } from "../components/card";
+import { CalendarCard, Cards, ThemeCard } from "../components/card";
 import { attractivePoints, ThemeList } from "../constants";
 import { H1 } from "../shared/ui-kit/h1";
 import { P } from "../shared/ui-kit/p";
 import { user } from "../store";
+import { useMemo, useState } from "react";
 
 export function MainActivity() {
 
     const { type, setUser } = user();
+    const [ calendar, setCalnedar ] = useState<any[]>([]);
 
     const attractivePointChange = (e: any) => {
         setUser("point", e.target.value);
     }
 
+    useMemo(() => {
+        const birthDates = localStorage.getItem("birthDates");
+        setCalnedar(JSON.parse(birthDates!));
+    }, []);
+
     return (
         <>
             <H1>사랑하는 사람에게 생일 카드를 작성해보세요! 🎈</H1>
+
+            <P fontSize="18px" paddingTop="80px">
+                생일 정보를 조회해봤어요 🤗
+            </P>
+
+            <Cards>
+                { calendar.map((data: any, index: any) => (
+                    <CalendarCard key={index}>
+                        {data.title}
+                        {data.date}
+                    </CalendarCard>
+                ))}
+            </Cards>
+
             <P fontSize="18px" paddingTop="80px">
                 1 Way. 생일자의 매력 포인트는?
             </P>
@@ -56,14 +77,25 @@ export function MainActivity() {
             </Cards>
 
             <Button 
-                width="460px"
+                width="540px"
                 height="60px"
-                margin="40px"
+                margin="20px"
                 hover="not"
                 flex="flex"
                 type="등록 완료"
                 color="cornflowerblue">
-                등록 완료!
+                등록 완료! ✅
+            </Button>
+
+            <Button 
+                width="540px"
+                height="60px"
+                margin="20px"
+                hover="not"
+                flex="flex"
+                type="생일 날짜 확인하기"
+                color="firebrick">
+                생일 날짜 확인하기 📆
             </Button>
         </>
     )

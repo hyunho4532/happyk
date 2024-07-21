@@ -1,7 +1,9 @@
+/** @jsxImportSource @emotion/react */
 import Dialog from '@mui/material/Dialog';
-import { dialog, theme } from '../../store';
-import { css } from '@emotion/react';
+import { calendar, dialog, theme } from '../../store';
 import { Button } from '../button';
+import { P } from '../../shared/ui-kit/p';
+import { Input } from '../../shared/ui-kit/input';
 
 export function ThemeDialog() {
 
@@ -14,10 +16,6 @@ export function ThemeDialog() {
 
     return (
         <Dialog
-            className={css`
-                width: 480px;
-                height: 650px;
-            `}
             open={popup}
             onClose={() => themePopupDialogClose()}>
 
@@ -36,3 +34,39 @@ export function ThemeDialog() {
         </Dialog>
     )
 }
+
+export function CalendarDialog() {
+
+    const { popup } = dialog();
+    const { date } = calendar();
+
+    return (
+        <Dialog
+            PaperProps={{
+                sx: {
+                    width: 436,
+                    height: 320,
+                },
+            }}
+            open={popup}>
+
+            <P fontSize="18px" paddingTop="16px" paddingLeft="16px">
+                생일 날짜를 등록해주세요! {date}
+            </P>
+            
+            <Input width="390px" height="260px" isType="calendarNames" type="text" margin="16px">
+                이름 입력해주세요! ex: 홍길동
+            </Input>
+
+            <Button
+                width="410px"
+                height="90px"
+                margin="80px"
+                hover="not"
+                type="날짜 등록"
+                color="cornflowerblue">
+                날짜 등록 📆
+            </Button>
+        </Dialog>
+    )
+} 
