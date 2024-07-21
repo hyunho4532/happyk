@@ -3,6 +3,7 @@ import { Card } from "@mui/material";
 import React from "react";
 import { IMG } from "../../shared/ui-kit/img";
 import { P } from "../../shared/ui-kit/p";
+import { dialog } from "../../store";
 
 export function Cards({children}: { children: React.ReactNode }) {
     return (
@@ -33,13 +34,20 @@ export function ThemeCard({children}: { children: React.ReactNode }) {
 export function CalendarCard({children}: { children: React.ReactNode }) {
 
     const childrenArray = React.Children.toArray(children);
+    const { setPopup } = dialog();
+
+    const calendarOnClick = () => {
+        setPopup(true);
+    }
 
     return (
-        <Card className={css`
-            width: 220px;
-            height: 90px;
-            cursor: pointer;
-        `}>
+        <Card
+            onClick={calendarOnClick}
+            className={css`
+                width: 220px;
+                height: 90px;
+                cursor: pointer;
+            `}>
 
             <P fontSize="18px" paddingTop="4px" paddingLeft="16px">
                 {childrenArray[0]}

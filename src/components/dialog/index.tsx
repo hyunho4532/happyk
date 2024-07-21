@@ -35,10 +35,14 @@ export function ThemeDialog() {
     )
 }
 
-export function CalendarDialog() {
+export function BirthInfoDialog() {
 
-    const { popup } = dialog();
+    const { popup, setPopup } = dialog();
     const { date } = calendar();
+
+    const BirthInfoPopupDialogClose = () => {
+        setPopup(false);
+    }
 
     return (
         <Dialog
@@ -48,7 +52,8 @@ export function CalendarDialog() {
                     height: 320,
                 },
             }}
-            open={popup}>
+            open={popup}
+            onClose={() => BirthInfoPopupDialogClose()}>
 
             <P fontSize="18px" paddingTop="16px" paddingLeft="16px">
                 생일 날짜를 등록해주세요! {date}
@@ -70,3 +75,44 @@ export function CalendarDialog() {
         </Dialog>
     )
 } 
+
+export function CalendarDialog() {
+
+    const { popup, setPopup } = dialog();
+    const { date } = calendar();
+
+    const CalendarPopupDialogClose = () => {
+        setPopup(false);
+    }
+
+    return (
+        <Dialog
+            PaperProps={{
+                sx: {
+                    width: 436,
+                    height: 320,
+                },
+            }}
+            open={popup}
+            onClose={() => CalendarPopupDialogClose()}>
+
+            <P fontSize="18px" paddingTop="16px" paddingLeft="16px">
+                생일 날짜를 등록해주세요! {date}
+            </P>
+            
+            <Input width="390px" height="260px" isType="calendarNames" type="text" margin="16px">
+                이름 입력해주세요! ex: 홍길동
+            </Input>
+
+            <Button
+                width="410px"
+                height="90px"
+                margin="80px"
+                hover="not"
+                type="날짜 등록"
+                color="cornflowerblue">
+                날짜 등록 📆
+            </Button>
+        </Dialog>
+    )
+}

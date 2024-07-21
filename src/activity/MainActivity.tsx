@@ -4,12 +4,14 @@ import { CalendarCard, Cards, ThemeCard } from "../components/card";
 import { attractivePoints, ThemeList } from "../constants";
 import { H1 } from "../shared/ui-kit/h1";
 import { P } from "../shared/ui-kit/p";
-import { user } from "../store";
+import { dialog, user } from "../store";
 import { useMemo, useState } from "react";
+import { BirthInfoDialog } from "../components/dialog";
 
 export function MainActivity() {
 
     const { type, setUser } = user();
+    const { popup } = dialog();
     const [ calendar, setCalnedar ] = useState<any[]>([]);
 
     const attractivePointChange = (e: any) => {
@@ -100,6 +102,10 @@ export function MainActivity() {
                 color="firebrick">
                 생일 날짜 확인하기 📆
             </Button>
+
+            { 
+                popup && <BirthInfoDialog />
+            }
         </>
     )
 } 
