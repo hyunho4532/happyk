@@ -8,13 +8,15 @@ export function Input({
     margin,
     type,
     isType,
+    value,
     children
 }: {
     width: string,
     height: string,
     margin?: string,
     type: string,
-    isType: string
+    isType: string,
+    value?: string,
     children: any
 }) {
 
@@ -42,6 +44,7 @@ export function Input({
             `}
             placeholder={children}
             onChange={inputChange}
+            value={value}
         />
     )
 }

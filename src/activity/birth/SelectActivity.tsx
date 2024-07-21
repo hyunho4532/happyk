@@ -47,7 +47,7 @@ export function SelectActivity() {
 
                     <IMGS>
                         <IMG>
-                            {`../../../public/${path}`}
+                            {`https://happyk.vercel.app/${path}`}
                         </IMG>
                     </IMGS>
 

@@ -18,11 +18,14 @@ export function MainActivity() {
 
     useMemo(() => {
         const birthDates = localStorage.getItem("birthDates");
-        setCalnedar(JSON.parse(birthDates!));
+
+        if (birthDates) {
+            setCalnedar(JSON.parse(birthDates));
+        }
     }, []);
 
     return (
-        <>
+        <div>
             <H1>사랑하는 사람에게 생일 카드를 작성해보세요! 🎈</H1>
 
             <P fontSize="18px" paddingTop="80px">
@@ -97,6 +100,6 @@ export function MainActivity() {
                 color="firebrick">
                 생일 날짜 확인하기 📆
             </Button>
-        </>
+        </div>
     )
 } 

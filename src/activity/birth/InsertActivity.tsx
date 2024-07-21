@@ -10,7 +10,7 @@ import { Spacer } from "../../shared/ui-kit/spacer";
 
 export function InsertActivity() {
 
-    const { path } = user();
+    const { path, name, date } = user();
 
     return (
         <div
@@ -18,7 +18,7 @@ export function InsertActivity() {
                 width: 100%;
             `}>
             <IMG>
-                {`../../../public/${path}`}
+                {`https://happyk.vercel.app/${path}`}
             </IMG>
 
             <P
@@ -27,7 +27,7 @@ export function InsertActivity() {
                 생일자의 이름을 입력해주세요!
             </P>
 
-            <Input width="390px" height="40px" isType="name" type="text">
+            <Input width="390px" height="40px" isType="name" value={name} type="text">
                 이름 입력해주세요! ex: 홍길동
             </Input>
 
@@ -37,7 +37,7 @@ export function InsertActivity() {
                 생일 날짜를 선택해주세요!
             </P>
 
-            <Input width="390px" height="40px" isType="date" type="date">
+            <Input width="390px" height="40px" isType="date" value={date} type="date">
                 이름 입력해주세요! ex: 홍길동
             </Input>
 
