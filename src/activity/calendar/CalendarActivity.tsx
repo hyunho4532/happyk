@@ -25,7 +25,7 @@ export function CalendarActivity() {
 
     return (
         <div
-            style={{ "width": "1600px" }}>
+            style={{ "width": "1200px" }}>
             <H1>생일 날짜를 확인해보세요 📆</H1>
             <FullCalendar
                 plugins={[ dayGridPlugin, interactionPlugin ]}

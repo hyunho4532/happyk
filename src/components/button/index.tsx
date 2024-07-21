@@ -100,8 +100,7 @@
                 width: ${width};
                 height: ${height};
                 display: ${flex};
-                margin-left: 8px;
-                margin: ${margin != null ? '0 auto': ''};
+                margin-left: ${margin != null ? `${margin}` : ''};
                 margin-top: ${margin != null ? `${margin}` : ''};
                 margin-bottom: ${margin != null ? `${margin}` : ''};
                 transition: transform 0.7s;
