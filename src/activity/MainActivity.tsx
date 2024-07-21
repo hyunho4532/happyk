@@ -18,7 +18,10 @@ export function MainActivity() {
 
     useMemo(() => {
         const birthDates = localStorage.getItem("birthDates");
-        setCalnedar(JSON.parse(birthDates!));
+
+        if (birthDates) {
+            setCalnedar(JSON.parse(birthDates));
+        }
     }, []);
 
     return (

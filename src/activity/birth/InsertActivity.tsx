@@ -18,7 +18,7 @@ export function InsertActivity() {
                 width: 100%;
             `}>
             <IMG>
-                {`../../../public/${path}`}
+                {`https://happyk.vercel.app/${path}`}
             </IMG>
 
             <P
