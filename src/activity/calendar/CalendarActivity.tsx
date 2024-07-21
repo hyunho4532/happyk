@@ -3,12 +3,11 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 import { calendar, dialog } from "../../store";
-import { CalendarDialog } from "../../components/dialog";
 import { useEffect, useState } from "react";
 
 export function CalendarActivity() {
     const [ calendars, setCalendars ] = useState<any[]>([]);
-    const { popup, setPopup } = dialog();
+    const { setPopup } = dialog();
     const { setCalendar } = calendar();
 
     const handleDateClick = (arg: any) => {
@@ -35,10 +34,6 @@ export function CalendarActivity() {
                     date: calendar.date
                 }))}
                 dateClick={handleDateClick} />
-
-            {
-                popup && <CalendarDialog /> 
-            }
         </div>
     )
 }
