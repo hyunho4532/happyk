@@ -22,7 +22,7 @@ export function ThemeCard({children}: { children: React.ReactNode }) {
             width: 100px;
             height: 100px;
             margin-top: 12px;
-            margin-left: 12px;
+            margin-left: 24px;
             cursor: pointer;
         `}>
             <IMG>

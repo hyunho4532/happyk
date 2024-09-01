@@ -40,7 +40,8 @@ export function Input({
                 height: ${height};
                 padding-left: 8px;
                 margin-top: ${margin};
-                margin-left: ${margin};
+                border-color: gray;
+	            outline: none;
             `}
             placeholder={children}
             onChange={inputChange}

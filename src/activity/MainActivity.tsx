@@ -58,9 +58,9 @@ export function MainActivity() {
             </P>
 
             <Buttons>
-                <Button width="180px" height="120px" type="생일 카드 작성 등록">아빠 🧔</Button>
-                <Button width="180px" height="120px" type="생일 카드 작성 등록">엄마 👸</Button>
-                <Button width="180px" height="120px" type="생일 카드 작성 등록">누나 & 형 🧑👧</Button>
+                <Button width="140px" height="60px" type="생일 카드 작성 등록">아빠</Button>
+                <Button width="140px" height="60px" type="생일 카드 작성 등록" margin="16px">엄마</Button>
+                <Button width="140px" height="60px" type="생일 카드 작성 등록" margin="16px">누나 & 형</Button>
             </Buttons>
 
             <P fontSize="18px" paddingTop="80px">
@@ -80,7 +80,7 @@ export function MainActivity() {
             </Cards>
 
             <Button 
-                width="540px"
+                width="476px"
                 height="60px"
                 margin="20px"
                 hover="not"
@@ -91,7 +91,7 @@ export function MainActivity() {
             </Button>
 
             <Button 
-                width="540px"
+                width="476px"
                 height="60px"
                 margin="20px"
                 hover="not"
