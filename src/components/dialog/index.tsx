@@ -25,7 +25,7 @@ export function ThemeDialog() {
                 margin="60px"
                 hover="not"
                 type="테마 등록"
-                color="green"
+                color="cornflowerblue"
                 path={path}>
                 테마 등록 완료!
             </Button>
